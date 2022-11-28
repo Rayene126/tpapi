@@ -1,7 +1,11 @@
-package com.example.docker;
+package com;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
 
 @SpringBootApplication
 public class DockerApplication {
@@ -14,7 +18,7 @@ public class DockerApplication {
 		headers.set("X-CMC_PRO_API_KEY","Bearer"+ token);
 
 		RestTemplate restTemplate = new RestTemplate();
-		String uri = "https://pro-api.coinmarketcap.com/v1/content/posts/top";
+		String uri = "https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
 
 		HttpEntity<String> request = new HttpEntity<String>(headers);
 		ResponseEntity<String> result =  restTemplate.exchange(uri, HttpMethod.GET,request,String.class);
