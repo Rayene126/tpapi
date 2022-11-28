@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class DockerApplication {
 
 	static String work(){
-		String token = "4a9da3ab-01f2-4cd1-8b85-0a295a71a497";
+		String token = "$secrets.APIkey";
 		HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		//headers.set("Authorization", String.format("X-CMC_PRO_API_KEY %s", token));
