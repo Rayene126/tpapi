@@ -20,9 +20,9 @@ jobs :
       - name : Set up JDK
         uses : actions/setup-java@v1
         with :
-          java-version : 11
+          java-version : 17
       - name : Build with Maven
-        run : mvn clean install
+        run : mvn verify
 
       - name : Build the Docker Image
         run : docker build . --file Dockerfile --tag rabida/rayene:${GITHUB_SHA::8}
